@@ -46,6 +46,26 @@ public class Customer {
             Instant.now());
     }
 
+    public static Customer restore(
+            UUID id,
+            String fullName,
+            String email,
+            String documentNumber,
+            CustomerStatus status,
+            KycStatus kycStatus,
+            Instant createdAt
+    ){
+        return new  Customer(
+                id,
+                fullName,
+                email,
+                documentNumber,
+                status,
+                kycStatus,
+                createdAt
+        );
+    }
+
     public void approveKyc() {
         ensureCustomerIsNotBlocked();
         this.kycStatus = KycStatus.APPROVED;
@@ -70,7 +90,7 @@ public class Customer {
         }
     }
 
-    private String validateRequired(String value, String message) {
+    private static String validateRequired(String value, String message) {
             if (value == null || value.isBlank()) {
                 throw new IllegalArgumentException(message);
             }
