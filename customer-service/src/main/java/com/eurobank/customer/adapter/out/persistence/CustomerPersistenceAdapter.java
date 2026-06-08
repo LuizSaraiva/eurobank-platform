@@ -1,8 +1,11 @@
-package com.eurobank.customer.application.port.out;
+package com.eurobank.customer.adapter.out.persistence;
 
 import com.eurobank.customer.adapter.out.persistence.entity.CustomerEntity;
 import com.eurobank.customer.adapter.out.persistence.mapper.CustomerMapper;
 import com.eurobank.customer.adapter.out.persistence.repository.CustomerJpaRepository;
+import com.eurobank.customer.application.port.out.CheckCustomerExistsPort;
+import com.eurobank.customer.application.port.out.FindCustomerByDocumentPort;
+import com.eurobank.customer.application.port.out.SaveCustomerPort;
 import com.eurobank.customer.domain.model.Customer;
 import org.springframework.stereotype.Component;
 
